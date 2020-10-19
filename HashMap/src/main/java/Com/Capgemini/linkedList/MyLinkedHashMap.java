@@ -29,6 +29,15 @@ public class MyLinkedHashMap<K,V> {
 			myMapNode.setValue(value);
 		}
 	}
+	
+	public K remove(K key) {
+		int index = this.getBucketIndex(key);
+		MyLinkedList<K> myLinkedList = this.myBucketArray.get(index);
+		if(myLinkedList == null)
+			return null;
+		MyMapNode<K, V> myMapNode = (MyMapNode<K, V>) myLinkedList.remove(key);
+		return (myMapNode == null) ? null : myMapNode.getKey();
+	}
 
 	public V get(K key) {
 		int index = this.getBucketIndex(key);
@@ -46,4 +55,3 @@ public class MyLinkedHashMap<K,V> {
 	}
 	
 }
- 

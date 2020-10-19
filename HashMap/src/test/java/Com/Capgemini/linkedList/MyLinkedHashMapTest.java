@@ -1,9 +1,7 @@
-package Com.Capgenimi.linkedList;
+package Com.Capgemini.linkedList;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import Com.Capgemini.linkedList.MyLinkedHashMap;
 
 public class MyLinkedHashMapTest {
 	
@@ -15,7 +13,7 @@ public class MyLinkedHashMapTest {
         MyLinkedHashMap<String,Integer> myLinkedHashMap = new MyLinkedHashMap<>();
         String[] words = sentence.toLowerCase().split(" ");
         for(String word : words) {
-            Integer value =  myLinkedHashMap.get(word); 
+            Integer value =  myLinkedHashMap.get(word);
             if(value == null)
                 value = 1;
             else 
@@ -26,4 +24,24 @@ public class MyLinkedHashMapTest {
         int frequency = myLinkedHashMap.get("paranoid");
         Assert.assertEquals(3, frequency);
     }
+	
+	@Test
+	public void givenASentence_WhenAWordIsGiven_ShouldRemoveThatWordFromTheHashTable() {
+		String sentence = "Paranoids are not paranoid because they are paranoid but"
+				+ " because they keep putting themselves deliberately into paranoid "
+				+ "avoidable situations";
+		MyLinkedHashMap<String, Integer> myLinkedHashMap = new MyLinkedHashMap<>();
+		String[] words = sentence.toLowerCase().split(" ");
+		for(String word : words) {
+			Integer value =  myLinkedHashMap.get(word);
+			if(value == null)
+				value = 1;
+			else 
+				value = value + 1;
+			myLinkedHashMap.add(word, value);
+		}
+		String remove = myLinkedHashMap.remove("avoidable");
+		System.out.println(myLinkedHashMap);		
+		Assert.assertEquals("avoidable", remove);
+	}
 }
