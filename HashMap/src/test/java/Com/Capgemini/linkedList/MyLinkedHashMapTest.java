@@ -15,7 +15,7 @@ public class MyLinkedHashMapTest {
         MyLinkedHashMap<String,Integer> myLinkedHashMap = new MyLinkedHashMap<>();
         String[] words = sentence.toLowerCase().split(" ");
         for(String word : words) {
-            Integer value =  myLinkedHashMap.get(word);
+            Integer value =  myLinkedHashMap.get(word); 
             if(value == null)
                 value = 1;
             else 
