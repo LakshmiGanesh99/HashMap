@@ -4,7 +4,7 @@ import Com.Capgemini.linkedList.*;
 
 public class MyLinkedList<K> {
 
-	public INode head;
+	public INode head; 
 	public INode tail;
 
 	public MyLinkedList() {

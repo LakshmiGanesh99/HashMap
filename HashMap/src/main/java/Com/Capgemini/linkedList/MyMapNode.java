@@ -7,7 +7,7 @@ public class MyMapNode<K, V> implements INode<K>{
 	MyMapNode<K, V> next;
 	
 	public MyMapNode(K key, V value) {
-		this.key = key;
+		this.key = key; 
 		this.value = value;
 		next = null;
 	}

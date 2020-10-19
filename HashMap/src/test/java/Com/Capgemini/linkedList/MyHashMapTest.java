@@ -10,7 +10,7 @@ import org.junit.Test;
 public class MyHashMapTest 
 {
 
-    @Test
+    @Test 
     public void shouldAnswerWithTrue()
     {
     	String sentence = "To be ot not to be";
